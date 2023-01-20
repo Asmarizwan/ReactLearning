@@ -1,0 +1,25 @@
+﻿@inherits UmbracoViewPage
+@{
+	var homepage = Umbraco.AssignedContentItem.AncestorOrSelf<HomePage>();
+	var children = homepage?.Children?.Where(x => x.IsVisible()) ?? Enumerable.Empty<IPublishedContent>();
+}
+<div id="header">
+			<div>
+				<a href="home" class="logo"><img src="~/images/GiGi.png" alt="" style="height:4rem; width: 12rem;" ></a>
+				<ul id="navigation">
+					<li class="selected">
+				<a href="@homepage.Url()">@homepage.Name</a>
+					</li>
+			@if(children != null && children.Any())
+			{
+				foreach(var child in children)
+				{
+						<li class="menu">
+						<a href="@child.Url()" style="margin-left:-2rem">@child.Name</a>
+					</li>
+				}
+			}
+		
+				</ul>
+			</div>
+</div>

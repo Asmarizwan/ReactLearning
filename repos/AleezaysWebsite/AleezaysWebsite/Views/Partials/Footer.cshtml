@@ -1,0 +1,29 @@
+﻿@inherits UmbracoViewPage
+@{
+	var homepage = Model.AncestorOrSelf<HomePage>();
+	var tiktokUrl = "http://tiktok.com/@gigis_candles?-t=8XIBKDu5o05&_r=1";
+}
+
+
+
+				<div class="connect" style="margin-top : -18px;">
+					<div style="padding:5px; text-align:center; ">
+			<img src="~/images/Facebook-Icons.png" style="height:1rem; " />
+		
+		<a href="~/http://facebook.com/" target="_blank" class="facebook" style=" margin-left:5px; color:white">
+			facebook</a>
+		<a href="https://www.instagram.com/gigis_.candles/" target="_blank" class="twitter" style=" margin-left:5rem; color:white">
+			<img src="~/images/Instagram.jpg" style="height:1rem; padding-right:0.5rem" />Instagram
+		</a>
+		<a href="~/http://google.com/" target="_blank" class="googleplus" style=" margin-left:5rem; color:white">
+			<img src="~/images/Google-icons.png" style="height:1rem; padding-right:0.5rem" />google
+		</a>
+
+		<a href="@tiktokUrl" target="_blank" class="pinterest" style=" margin-left:5rem; color:white">
+			<img src="~/images/tiktok-logo.jpg" style="height:1rem; padding-right:0.5rem" />Tiktok
+		</a>
+	</div>
+				</div>
+<p style="text-align:center; padding-bottom: 2rem;  color:darkgrey">&copy; @DateTime.Now.Year @Umbraco.GetDictionaryValue("Footer.CopyRightTitle")</p>
+			
+		

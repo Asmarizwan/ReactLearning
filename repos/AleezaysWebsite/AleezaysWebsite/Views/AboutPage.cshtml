@@ -1,0 +1,31 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_Layout";
+	var aboutpage = Model.AncestorOrSelf<AboutPage>();
+	if (aboutpage.Image == null) return;
+}
+
+<div id="body">
+	<div class="header">
+		<div>
+			<h1>@Model.Title</h1>
+		</div>
+	</div>
+	<div class="body">
+		<img src="@aboutpage.Image.Url()"  alt="" style="height:15.5rem">
+	</div>
+	<div class="footer">
+		<div class="sidebar">
+			<h1>@aboutpage.SidebarHeading</h1>
+			<p>@aboutpage.BodyText<a href="home"></a></p>
+		</div>
+		<div class="article" style="margin-top: 2rem;">
+			<h1>@aboutpage.MainContentHeading</h1>
+			<p>@aboutpage.MainContentBody</p>			
+			</div>
+			
+	</div>
+
+</div>

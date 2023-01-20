@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ProductPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = Layout = "_Layout";
+	var productpage = Model.AncestorOrSelf<ProductPage>();
+}
+
+<div id="body">
+	<div class="header">
+		<div>
+			<h1>Produkter</h1>
+		</div>
+	</div>
+	<div >
+			@Html.GetBlockListHtml(Model.MainContent)
+		
+
+	</div>
+</div>

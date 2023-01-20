@@ -1,0 +1,58 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "_Layout";
+	var homepage = Model.AncestorOrSelf<HomePage>();
+	if (homepage.Image == null) return;
+	if (homepage.ContentImage == null) return;
+
+
+}
+<div id="body" class="home">
+	<div class="header">
+		<img src="@homepage.Image.Url()" alt="" style="height: 40rem;">
+		<div>
+			<a href="product">@homepage.ImageText</a>
+		</div>
+	</div>
+	<div class="body"style="margin-top: -18px">
+		<div >
+			<div>
+			<h3 style="padding-top: 2rem">@homepage.ContentDescription</h3>
+			</div>
+			<img class="img-fluid" src="@homepage.ContentImage.Url()"  alt="" style="height: 18rem; padding-top: 3px">
+		</div>
+	</div>
+	<div class="footer" style="height:5rem ">
+		<div>
+			<ul>
+				<li>
+					<a href="produkt" target="_blank" class="product">
+					<img src="~/images/iconsDrop.png" /></a>
+					<h1>PRODUKTER</h1>
+				</li>
+				<li>
+					<a href="om-oss" target="_blank" class="about">
+						<img src="~/images/iconsHands.png" />
+					</a>
+					<h1>vÅR RESA</h1>
+				</li>
+				<li>
+					<a href="produkt" target="_blank" class="flavor">
+						<img src="~/images/iconsFood.png" />
+					</a>
+					<h1>SMAK</h1>
+				</li>
+				<li>
+					
+					<a href="kontakt" target="_blank" class="contact">
+						<img src="~/images/iconslocation.png" />
+					</a>
+					<h1>VÅR PLATS</h1>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+

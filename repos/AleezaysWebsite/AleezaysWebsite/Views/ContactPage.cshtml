@@ -1,0 +1,41 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ContactPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+
+	Layout = "_Layout";	
+	var contactpage = Model.AncestorOrSelf<ContactPage>();
+	
+	
+}
+<div id="body" class="contact">
+	<div class="header">
+		<div>
+			<h1>@contactpage.Title</h1>
+		</div>
+	</div>
+	<div class="body">
+		<div>
+			<div>
+				<img src="@contactpage.Image.Url()" alt="" style="height:20rem; width: 45rem; margin-left: -4rem">
+				<p>@contactpage.SubTitle</p>
+				</div>
+		</div>
+	</div>
+	<div class="footer">
+			<div class="contact">
+				<h1>INQUIRY FORM</h1>
+				<form action="index.html">
+					<input type="text" name="Name" value="Name" onblur="this.value=!this.value?'Name':this.value;" onfocus="this.select()" onclick="this.value='';">
+					<input type="text" name="Email" value="Email" onblur="this.value=!this.value?'Email':this.value;" onfocus="this.select()" onclick="this.value='';">
+					<input type="text" name="Subject" value="Subject" onblur="this.value=!this.value?'Subject':this.value;" onfocus="this.select()" onclick="this.value='';">
+					<textarea name="meassage" cols="50" rows="7">Share your thoughts</textarea>
+					<input type="submit" value="Send" id="submit">
+				</form>
+			</div>
+		<div class="section">
+			<h1>@contactpage.DescriptionTitle</h1>
+			<p>@contactpage.Description</p>
+				</div>
+	</div>
+</div>

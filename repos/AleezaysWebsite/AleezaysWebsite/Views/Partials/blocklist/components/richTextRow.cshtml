@@ -1,0 +1,7 @@
+@inherits UmbracoViewPage<BlockListItem>
+@{
+    var row = (RichTextRow)Model.Content;
+}
+<div class="row gx-4 gx-lg-5 justify-content-center">
+   @row.Content
+</div>

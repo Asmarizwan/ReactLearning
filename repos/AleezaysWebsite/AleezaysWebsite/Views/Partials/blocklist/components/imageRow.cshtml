@@ -1,0 +1,22 @@
+@inherits UmbracoViewPage<BlockListItem>
+@{
+    var row = (ImageRow)Model.Content;
+    if (row.Image == null) return;
+
+}
+<div class="row gx-4 gx-lg-5 justify-content-center">
+
+	
+		<ul>
+			<li>
+				<h1>All Time Classic</h1>
+				<p>This website template has been designed by freewebsitetemplates.com for you, for free.</p>
+			</li>
+			<li>
+				<img src="@row.Image.Url()" alt="">
+				<h2>@row.Caption</h2>
+			</li>		
+			
+		</ul>
+		
+</div>

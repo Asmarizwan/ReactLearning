@@ -1,0 +1,42 @@
+@inherits UmbracoViewPage<BlockListItem>
+@{
+	var row = (FeaturedItemsRow)Model.Content;	
+	var settings = (FeaturedItemRowSettings)Model.Settings;
+	if(settings?.Hide ?? false){ return; }
+	if (row.FeaturedItems == null|| !row.FeaturedItems.Any()) return;
+
+}
+
+<ul>	
+@foreach(var item in row.FeaturedItems)
+	{
+		
+				var rowItem = (ImageLinkItem)item.Content;
+		var rowSetting = (ImageLinkItemSettings)item.Settings;
+		if (rowSetting.Hide) continue;
+	<li>
+		@if(!string.IsNullOrWhiteSpace(rowItem.ProductTitle))
+		{
+					<h1 class="card-title">@rowItem.ProductTitle</h1>
+		}
+		@if(!string.IsNullOrWhiteSpace(rowItem.ProductDescription.ToString()))
+		{
+					<p class="card-text">@rowItem.ProductDescription</p>
+		}
+		</li>
+
+		<li>
+		@if(rowItem.Image != null)
+				{
+					<img class="card-img-top" src="@rowItem.Image.Url()" alt="@rowItem.Image.Name" style="width: 10rem; height 10rem">
+				}
+			
+				<h2>@rowItem.Price</h2>
+				@if(rowItem.Link != null)
+				{
+					<a href="@rowItem.Link.Url" @rowItem.Link.Target>@rowItem.Link.Name</a>
+				}
+
+	</li>
+	}
+</ul>

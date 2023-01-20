@@ -1,0 +1,123 @@
+
+/* * {
+    padding: 0;
+    margin: 0;
+    /* help to create the box a bit 3d*/
+    /* box-sizing: border-box;
+  } */
+  /* body{
+    margin:0; 
+    font-family: Inter, sans-serif; */
+    /* the following lines help in making the fact in card shape */
+    /* background-color: #cfafaf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */ 
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 90px;
+    padding: 30px 25px;
+    box-shadow: 0 1px 6px 0;
+    border-radius: 5px;
+    background-color: black;
+}
+.navbar--logo_text{
+    margin: 0;
+    color: #61DBFB;
+}
+
+.navbar--icon{
+    height: 40px;
+    margin-right: 7px;
+}
+/*This helps in toggling the color to light and dark*/
+.navbar.dark {
+    background-color: #21222A;
+}
+
+/* Toggle CSS */ 
+.header--toggler{
+    display: flex;
+    align-items: center;
+    margin-left: 12rem;
+}
+/*The name of the div matters if you change it, it will disappear*/
+.toggler--slider{
+    width: 7rem;
+    height: 15px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+
+}
+nav.dark .toggler--slider {
+    border-color: white;
+    background-color: #F5F5F5;
+}
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+nav.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+
+/* Main Component CSS  */
+
+  main{
+    height: 100%;
+   padding: 57px 27px;
+  }
+
+.main--title{
+    margin: 0;
+    font-size: 39px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 47px;
+    text-align: left;
+    margin-left: 2rem;
+
+}
+.main--facts{
+margin-top: 46px;
+max-width: 400px;
+text-align: left;
+}
+.main--facts li
+{
+  
+   font-size: 16px;   
+   line-height: 19px;
+   padding-block: 10px;
+}
+
