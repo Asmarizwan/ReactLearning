@@ -6,7 +6,7 @@ export default function FragmentComponent() {
     //< <React.Fragment> </React.Fragment>can also be written as <></>
     <React.Fragment>
         <h3>Heading</h3>
-        <h4>Subheading</h4>
-    </React.Fragment>
+          <h4>Subheading</h4>
+            </React.Fragment>
   )
 }
